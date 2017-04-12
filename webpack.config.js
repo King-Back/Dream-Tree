@@ -2,10 +2,14 @@ const path = require('path');
 const webpack = require("webpack");
 
 module.exports = {
-    entry: "./public/js/main.js",
+    // entry: "./public/js/main.js",
+    entry: {
+        vendor: ["react", "react-dom"],
+        index: "./public/js/main.js"
+    },
     output: {
         path: path.resolve("./public/dist"),
-        filename: "bundle.js"
+        filename: "[name].js"
     },
     resolve: {
         extensions: ['.js', '.jsx']
@@ -22,6 +26,5 @@ module.exports = {
                 }
             }
         ]
-
     }
 };

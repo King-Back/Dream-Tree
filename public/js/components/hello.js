@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 export default class Hello extends React.Component {
     displayHello() {
@@ -6,7 +7,6 @@ export default class Hello extends React.Component {
     }
 
     render() {
-
         return <div>
             {this.props.hello}
             <button onClick={this.displayHello.bind(this)}>点击</button>
