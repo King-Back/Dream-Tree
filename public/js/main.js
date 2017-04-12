@@ -6,7 +6,7 @@ import {Provider} from 'react-redux';
 import {Router, Route, browserHistory} from 'react-router';
 import React from 'react';
 import Hello from './containers/hello';
-import reducer from './reducers/hello';
+import reducer from './reducers/index';
 
 const store = createStore(reducer);
 

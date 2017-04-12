@@ -3,7 +3,7 @@ import {connect} from "react-redux";
 
 const mapStateToProps = (state) => {
     return {
-        hello: state.type
+        hello: state.hello.type
     }
 };
 
