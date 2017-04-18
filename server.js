@@ -26,18 +26,6 @@ app.use(bodyParser.json());
 
 app.use(cors());
 
-app.use(express.static('./', {
-    dotfiles: 'ignore',
-    etag: true,
-    extensions: ['html', 'js', 'css'],
-    index: ['index.html'],
-    maxAge: '1d',
-    redirect: false,
-    setHeaders: function (res, path, stat) {
-        res.set('x-timestamp', Date.now());
-    }
-}));
-
 app.listen(3000, () => {
     console.log('server start');
 });
