@@ -11,7 +11,7 @@ export default class Login extends React.Component {
             </div>
             <div>
                 <h3>密码：</h3>
-                <input type="password" id="password"/>
+                <input type="password" id="password  "/>
             </div>
             <button>登录</button>
         </div>;
