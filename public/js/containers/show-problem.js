@@ -4,8 +4,8 @@ import ShowProblem from '../components/show-problem';
 const mapStateToProps = (state) => {
     return {
         title: state.showProblem.problem.title,
-        content: state.showProblem.problem.content,
-        writer: state.showProblem.problem.writer
+        description: state.showProblem.problem.description,
+        auther: state.showProblem.problem.auther
     }
 };
 

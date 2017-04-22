@@ -18,11 +18,11 @@ export default class ShowProblem extends React.Component {
                 </div>
                 <div className="form-group">
                     <label className="col-md-2 control-label">详细描述</label>
-                    <label className="col-md-2 control-label">{this.props.content}</label>
+                    <label className="col-md-2 control-label">{this.props.description}</label>
                 </div>
                 <div className="form-group">
                     <label className="col-md-2 control-label">发布人:</label>
-                    <label className="col-md-2 control-label">{this.props.writer}</label>
+                    <label className="col-md-2 control-label">{this.props.auther}</label>
                 </div>
             </form>
         </div>;
