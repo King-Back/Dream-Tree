@@ -1,7 +1,8 @@
 import React from 'react';
+
 export default class Login extends React.Component {
     render() {
-        return <div>
+        return <div className="col-md-8 col-md-offset-2">
             <div >
                 <h2>登录</h2>
             </div>

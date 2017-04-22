@@ -7,7 +7,7 @@ const execute = require('./public/db/execute');
 
 app.use(express.static(__dirname + '/public'));
 
-app.get('/getAllInfo', execute.getAllInfo);
+app.get('/getProblem', execute.getProblem);
 
 app.listen(3000, () => {
     console.log('server start');
