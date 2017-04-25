@@ -10,8 +10,9 @@ import Login from './containers/login';
 import ShowProblem from './containers/show-problem';
 import showProblemMiddleware from './middlewares/showProblemMiddleware';
 import middleHello from './middlewares/hello';
+import middleWriteProblem from './middlewares/write-problem';
 
-const createMiddlewareStore = applyMiddleware(middleHello, showProblemMiddleware)(createStore);
+const createMiddlewareStore = applyMiddleware(middleHello, showProblemMiddleware, middleWriteProblem)(createStore);
 const store = createMiddlewareStore(reducer);
 
 
