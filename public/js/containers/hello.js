@@ -8,7 +8,6 @@ const mapStateToProps = (state) => {
 };
 
 const mapDispatchToProps = (dispatch) => {
-
     return {
         onDisplayHello: () => {
             dispatch({type: "GET_HELLO"});

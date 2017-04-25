@@ -19,9 +19,9 @@ app.get("*", function (req, res) {
 // mongoose.Promise = global.Promise;
 // mongoose.connect('mongodb://localhost:27017/Time-in-place');
 //
-// var db = mongoose.connection;
-// db.on('error', console.log);
-// db.once('open', function () {
+// var dbs = mongoose.connection;
+// dbs.on('error', console.log);
+// dbs.once('open', function () {
 //     console.log('success!');
 // });
 //
@@ -29,6 +29,12 @@ app.get("*", function (req, res) {
 // app.use(bodyParser.json());
 //
 // app.use(cors());
+const db = require('./server/dbs/connection');
+const execute = require('./server/dbs/execute');
+
+app.use(express.static(__dirname + '/public'));
+
+app.get('/getProblem', execute.getProblem);
 
 app.listen(3000, () => {
     console.log('server start');
