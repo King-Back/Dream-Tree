@@ -10,9 +10,10 @@ const mapStateToProps = (state) => {
 };
 
 const mapDispatchToProps = (dispatch) => {
+    const id=decodeURI(location.href).split("/").pop();
     return {
         onDisplayProblem: () => {
-            dispatch({type: "LOAD_PROBLEM_INFO"});
+            dispatch({type: "LOAD_PROBLEM_INFO",url:`${id}`});
         }
     };
 };

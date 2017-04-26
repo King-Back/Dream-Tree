@@ -1,4 +1,5 @@
 import React from 'react';
+import {Link} from 'react-router';
 
 export default class ProblemList extends React.Component {
     componentWillMount() {
@@ -9,10 +10,12 @@ export default class ProblemList extends React.Component {
         const p = this.props.problems.map((a, i)=> {
             return <div key={i}>
                 <form className="form-horizontal">
-                    <div className="form-group">
-                        <label className="col-md-2 control-label">标题</label>
-                        <label className="col-md-2 control-label">{a.title}</label>
-                    </div>
+                    <Link to={`/showProblem/${a._id}`}>
+                        <div className="form-group">
+                            <label className="col-md-2 control-label">标题</label>
+                            <label className="col-md-2 control-label">{a.title}</label>
+                        </div>
+                    </Link>
                     <div className="form-group">
                         <label className="col-md-2 control-label">详细描述</label>
                         <label className="col-md-2 control-label">{a.description}</label>
