@@ -1,16 +1,28 @@
 import React from 'react';
+import {browserHistory} from 'react-router';
 
 export default class Login extends React.Component {
-    login(){
+    login() {
         const userName = this.refs.userName.value;
         const userPassword = this.refs.userPassword.value;
         console.log(userName, userPassword);
-        if(!userName || !userPassword){
+        if (!userName || !userPassword) {
             alert("用户名和密码不能为空！");
-            return ;
+            return;
         }
         this.props.onLogin({userName, userPassword})
     }
+
+    componentWillReceiveProps(nextProps) {
+        if (nextProps.logSuccess) {
+            alert("登录成功！");
+            browserHistory.push('/');
+        } else {
+            alert("登录失败！");
+        }
+    }
+
+
     render() {
         return <div className="col-md-8 col-md-offset-2">
             <div >

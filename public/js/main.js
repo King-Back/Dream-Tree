@@ -13,9 +13,10 @@ import showProblemMiddleware from './middlewares/showProblemMiddleware';
 import middleHello from './middlewares/hello';
 import middleWriteProblem from './middlewares/write-problem';
 import problemsListMiddleware from './middlewares/problemsListMiddleware';
+import loginMiddleWre from './middlewares/loginMiddleWare';
 
 
-const createMiddlewareStore = applyMiddleware(middleHello, showProblemMiddleware, middleWriteProblem, problemsListMiddleware)(createStore);
+const createMiddlewareStore = applyMiddleware(middleHello, showProblemMiddleware, middleWriteProblem, problemsListMiddleware,loginMiddleWre)(createStore);
 const store = createMiddlewareStore(reducer);
 
 render(<Provider store={store}>
