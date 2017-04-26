@@ -22,7 +22,7 @@ const store = createMiddlewareStore(reducer);
 render(<Provider store={store}>
     <Router history={browserHistory}>
         <Route path="/" component={Hello}/>
-        <Route path="/showProblem" component={ShowProblem}/>
+        <Route path="/showProblem/:id" component={ShowProblem}/>
         <Route path="/writeProblem" component={WriteProblem}/>
         <Route path="/login" component={Login}/>
         <Route path="/problemsList" component={ProblemsList}/>

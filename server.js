@@ -20,7 +20,7 @@ const execute_2 = require('./server/routers/problems-list');
 
 app.use(express.static(__dirname + '/public'));
 
-app.get('/getProblem', execute_1.getProblem);
+app.get('/getProblem/:id', execute_1.getProblem);
 app.get('/getAllProblems', execute_2.getAllProblems);
 app.use("/", hello);
 
