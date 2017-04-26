@@ -1,8 +1,8 @@
-const Problem = require('./Model/problem');
+const Problem = require('./../dbs/Model/problem');
 
-exports.getProblem = function(req, res) {
+exports.getAllProblems = function(req, res) {
     Problem.find().sort({'createdAt': -1}).exec(function (err, info) {
         if (err) return res.status(500).json({error: err.message});
-        res.send(info);
+        res.json({info});
     });
 };
