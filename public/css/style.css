@@ -5,3 +5,26 @@
 .submitButton {
     margin-top: 30px;
 }
+
+.logPage{
+    margin-top: 15%;
+}
+
+.account{
+    margin-top: 20px;
+    width: 250px;
+}
+
+.logbutton{
+    margin-top: 30px;
+    width: 35%;
+
+}
+
+.logColor{
+    height: 600px;
+    background: linear-gradient(to bottom,
+    rebeccapurple,purple, mediumpurple,navajowhite);
+}
+
+
