@@ -15,16 +15,35 @@
     width: 250px;
 }
 
-.logbutton{
+.logButton{
     margin-top: 30px;
     width: 35%;
-
+    margin-bottom: 195px;
 }
 
 .logColor{
     height: 600px;
-    background: linear-gradient(to bottom,
-    rebeccapurple,purple, mediumpurple,navajowhite);
+    /*background: linear-gradient(to bottom,*/
+    /*rebeccapurple,purple, mediumpurple,navajowhite);*/
+    /*background: ;*/
+}
+
+div#div1{
+    position:fixed;
+    top:0;
+    left:0;
+    bottom:0;
+    right:0;
+    z-index:-1;
+}
+div#div1 > img {
+    height:100%;
+    width:100%;
+    border:0;
+}
+
+.back{
+    background:url(../images/back1.jpg);
 }
 
 

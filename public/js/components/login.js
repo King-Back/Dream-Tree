@@ -27,31 +27,23 @@ export default class Login extends React.Component {
 
 
     render() {
-        return <div>
-            <div className="logColor ">
-                <div className="col-md-8 col-md-offset-7 logPage ">
-                    <div >
-                        <div >
-                            <div>
-                                <h2 >登录</h2>
-                            </div>
-
-
-                            <div className="input-group account">
-
-                                <label className="input-group-addon ">账号</label>
-                                <input type="text" id="account" ref="userName" className="form-control"/>
-                            </div>
-
-                            <div className="input-group account">
-                                <lable className="input-group-addon">密码</lable>
-                                <input type="password" id="password" ref="userPassword" className="form-control"/>
-                            </div>
-
-                            <button className='btn btn-primary  logbutton' onClick={this.login.bind(this) }>登录</button>
+        return <div className="container-fluid back">
+                <div className="col-md-5 col-md-offset-7 logPage ">
+                        <div>
+                            <h2>登录</h2>
                         </div>
-                    </div>
-                </div>
+                        <div className="input-group account">
+
+                            <label className="input-group-addon ">账号</label>
+                            <input type="text" id="account" ref="userName" className="form-control"/>
+                        </div>
+
+                        <div className="input-group account">
+                            <lable className="input-group-addon">密码</lable>
+                            <input type="password" id="password" ref="userPassword" className="form-control"/>
+                        </div>
+
+                        <button className='btn btn-primary  logButton' onClick={this.login.bind(this) }>登录</button>
             </div>
         </div>;
     }
