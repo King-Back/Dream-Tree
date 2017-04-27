@@ -7,6 +7,13 @@ export default class Register extends React.Component {
         const confirmPassword = this.refs.confirm.value.trim();
 
         this.props.onDisplayRegister({username, password, confirmPassword});
+        if (this.props.flag == true) {
+            if (this.props.register == 'register success') {
+                alert(this.props.register);
+            } else {
+                alert("register fail");
+            }
+        }
     }
 
     render() {

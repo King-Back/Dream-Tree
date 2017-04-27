@@ -17,7 +17,6 @@ import problemsListMiddleware from './middlewares/problemsListMiddleware';
 import loginMiddleWare from './middlewares/loginMiddleWare'
 import registerMiddleware from './middlewares/registerMiddleware'
 
-
 const createMiddlewareStore = applyMiddleware(middleHello, showProblemMiddleware, middleWriteProblem, problemsListMiddleware,loginMiddleWare,registerMiddleware)(createStore);
 const store = createMiddlewareStore(reducer);
 
