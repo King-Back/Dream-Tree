@@ -6,7 +6,7 @@ const registerMiddleware = store=>next=>action=> {
             request.post(`/register`)
                 .send(action.user)
                 .end((err, res)=> {
-                        next({
+                    next({
                             type: 'JUDGE_REGISTER',
                             tip: res.body.tip
                         })
