@@ -3,8 +3,7 @@ import register from '../components/register';
 
 const mapStateToProps = (state) => {
     return {
-        register: state.register.tip,
-        flag: state.register.flag
+        register: state.register.tip
     }
 };
 

@@ -1,8 +1,7 @@
-export default (state = {tip: "", flag: ""}, action)=> {
+export default (state = {tip: ""}, action)=> {
     switch (action.type) {
         case "JUDGE_REGISTER":
             state.tip = action.tip;
-            state.flag = true;
             return Object.assign({},state);
     }
     return state;
