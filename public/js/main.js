@@ -7,16 +7,17 @@ import Hello from './containers/hello';
 import reducer from './reducers/index';
 import WriteProblem from './containers/write-problem';
 import Login from './containers/login';
+import Register from './containers/register';
 import ShowProblem from './containers/show-problem';
 import ProblemsList from './containers/problem-list';
 import showProblemMiddleware from './middlewares/showProblemMiddleware';
 import middleHello from './middlewares/hello';
 import middleWriteProblem from './middlewares/write-problem';
 import problemsListMiddleware from './middlewares/problemsListMiddleware';
-import loginMiddleWre from './middlewares/loginMiddleWare';
+import loginMiddleWare from './middlewares/loginMiddleWare'
+import registerMiddleware from './middlewares/registerMiddleware'
 
-
-const createMiddlewareStore = applyMiddleware(middleHello, showProblemMiddleware, middleWriteProblem, problemsListMiddleware,loginMiddleWre)(createStore);
+const createMiddlewareStore = applyMiddleware(middleHello, showProblemMiddleware, middleWriteProblem, problemsListMiddleware,loginMiddleWare,registerMiddleware)(createStore);
 const store = createMiddlewareStore(reducer);
 
 render(<Provider store={store}>
@@ -26,5 +27,6 @@ render(<Provider store={store}>
         <Route path="/writeProblem" component={WriteProblem}/>
         <Route path="/login" component={Login}/>
         <Route path="/problemsList" component={ProblemsList}/>
+        <Route path="/registerPage" component={Register}/>
     </Router>
 </Provider>, document.getElementById("content"));

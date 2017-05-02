@@ -13,6 +13,6 @@ const mapDispatchToProps = (dispatch) => {
             dispatch({type: 'PUBLIC_PROBLEM', data: problemInfo});
         }
     }
-}
+};
 
 export default connect(mapStateToProps, mapDispatchToProps)(WriteProblem);
