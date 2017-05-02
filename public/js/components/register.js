@@ -10,12 +10,13 @@ export default class Register extends React.Component {
     }
 
     render() {
-        if (this.props.register == 'register success') {
-            alert(this.props.register);
-        } else {
-            alert("register fail");
+        if (this.props.flag) {
+            if (this.props.register == 'register success') {
+                alert(this.props.register);
+            } else {
+                alert("register fail");
+            }
         }
-
         return <div>
             <h2>注册</h2>
             <from>
