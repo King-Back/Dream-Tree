@@ -16,13 +16,13 @@ app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static(__dirname + '/public'));
 
 const db = require('./server/dbs/connection');
-const execute_1 = require('./server/routers/show-problem');
-const execute_2 = require('./server/routers/problems-list');
+const showProblem = require('./server/routers/show-problem');
+const problemsList = require('./server/routers/problems-list');
 
 app.use(express.static(__dirname + '/public'));
 
-app.get('/getProblem/:id', execute_1.getProblem);
-app.get('/getAllProblems', execute_2.getAllProblems);
+app.get('/getProblem/:id', showProblem.getProblem);
+app.get('/getAllProblems', problemsList.getAllProblems);
 app.use("/", hello);
 
 app.use('/', writeProblem);

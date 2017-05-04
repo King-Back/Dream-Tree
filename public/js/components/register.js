@@ -1,4 +1,5 @@
 import React from "react";
+import {browserHistory} from 'react-router';
 
 export default class Register extends React.Component {
     getInput() {
@@ -13,7 +14,7 @@ export default class Register extends React.Component {
         if (this.props.flag) {
             if (this.props.register == 'register success') {
                 alert(this.props.register);
-                location.pathname="/problemsList";
+                browserHistory.push('/problemsList');
             } else {
                 alert("register fail");
             }
