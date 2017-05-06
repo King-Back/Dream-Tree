@@ -2,7 +2,8 @@ const express = require('express');
 const app = new express();
 const path = require('path');
 
-var bodyParser = require('body-parser');
+const bodyParser = require('body-parser');
+const cookieParser = require('cookie-parser');
 const cors = require('cors');
 
 const hello = require('./server/routers/hello');
@@ -12,6 +13,7 @@ const register=require('./server/routers/register');
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
+app.use(cookieParser());
 
 app.use(express.static(__dirname + '/public'));
 
