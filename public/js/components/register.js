@@ -7,7 +7,12 @@ export default class Register extends React.Component {
         const password = this.refs.password.value.trim();
         const confirmPassword = this.refs.confirm.value.trim();
 
-        this.props.onDisplayRegister({username, password, confirmPassword});
+        if (password !== confirmPassword) {
+            alert("confirmPassword error");
+            return false;
+        } else {
+            this.props.onDisplayRegister({username, password, confirmPassword});
+        }
     }
 
     render() {
@@ -19,15 +24,16 @@ export default class Register extends React.Component {
                 alert("register fail");
             }
         }
+
         return <div>
             <h2>注册</h2>
             <from>
                 <lable>用户名</lable>
                 <lable><input type="text" ref="username"/></lable>
                 <lable>密码</lable>
-                <lable><input type="text" ref="password"/></lable>
+                <lable><input type="password" ref="password"/></lable>
                 <lable>确认密码</lable>
-                <lable><input type="text" ref="confirm"/></lable>
+                <lable><input type="password" ref="confirm"/></lable>
                 <button onClick={this.getInput.bind(this)}>注册</button>
             </from>
         </div>
