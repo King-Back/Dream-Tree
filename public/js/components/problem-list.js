@@ -7,6 +7,8 @@ export default class ProblemList extends React.Component {
     }
 
     render() {
+        const username = this.props.userCookie;
+        console.log(username);
         const p = this.props.problems.map((a, i)=> {
             return <div key={i}>
                 <form className="form-horizontal">
@@ -28,12 +30,12 @@ export default class ProblemList extends React.Component {
             </div>
         });
 
-        return <div className="col-md-8 col-md-offset-2">
+        return (<div className="col-md-8 col-md-offset-2">
             <div className="titlePage">
                 <center><h1>问题列表</h1></center>
             </div>
+           <div>{username}</div>
             {p}
-        </div>
-            ;
+        </div>);
     }
 }

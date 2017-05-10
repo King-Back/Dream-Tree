@@ -2,8 +2,10 @@ import {connect} from 'react-redux';
 import ProblemsList from '../components/problem-list';
 
 const mapStateToProps = (state) => {
+    const user = state.register.userCookie.split('=');
     return {
-        problems:state.problemsList.problems
+        problems:state.problemsList.problems,
+        userCookie: user[1]
     }
 };
 
