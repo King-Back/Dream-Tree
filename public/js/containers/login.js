@@ -10,6 +10,9 @@ const mapDispatchToProps = (dispatch) => {
     return {
         onLogin: (userInfo) => {
             dispatch({type: "LOGIN", data: userInfo})
+        },
+        onChangeLogSuccess: () => {
+            dispatch({type: "CHANGE_LOG_SUCCESS"});
         }
     }
 };

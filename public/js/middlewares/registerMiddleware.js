@@ -12,6 +12,11 @@ const registerMiddleware = store=>next=>action=> {
                         })
                 });
             break;
+        case "GET_COOKIES":
+            request.get('/cookies')
+                .end((err, res) => {
+                    next({type: "USERNAME", username: res.body});
+                });
     }
     next(action);
 };

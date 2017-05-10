@@ -2,10 +2,9 @@ import {connect} from 'react-redux';
 import ProblemsList from '../components/problem-list';
 
 const mapStateToProps = (state) => {
-    const user = state.register.userCookie.split('=');
     return {
         problems:state.problemsList.problems,
-        userCookie: user[1]
+        username: state.getCookies.username
     }
 };
 
@@ -13,6 +12,9 @@ const mapDispatchToProps = (dispatch) => {
     return {
         onDisplayProblemsList: () => {
             dispatch({type: "LOAD_PROBLEMS_LIST"});
+        },
+        getUsername: () => {
+            dispatch({type: "GET_COOKIES"});
         }
     };
 };
