@@ -1,6 +1,5 @@
 require('../../css/style.css');
 
-
 import React from 'react';
 import {browserHistory} from 'react-router';
 
@@ -17,12 +16,14 @@ export default class Login extends React.Component {
     }
 
     componentWillReceiveProps(nextProps) {
-        if (nextProps.logSuccess) {
+        if (nextProps.logSuccess === true) {
             alert("登录成功！");
             browserHistory.push('/');
-        } else {
+        } else if(nextProps.logSuccess === false) {
             alert("登录失败！");
         }
+
+        this.props.onChangeLogSuccess();
     }
 
     render() {

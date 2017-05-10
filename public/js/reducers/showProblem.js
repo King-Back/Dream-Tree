@@ -1,6 +1,5 @@
 export default (state = {problem: {}}, action) => {
-    if (action.type === 'LOAD_PROBLEM_INFO') {
-        console.log("red");
+    if (action.type === 'SHOW_PROBLEM_INFO') {
         state.problem = action.data;
         return Object.assign({}, state);
     }
