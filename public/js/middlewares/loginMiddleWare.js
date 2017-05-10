@@ -7,7 +7,7 @@ export default store => next => action => {
             .end((err, res) => {
                 console.log(res.body);
                 if(err) {
-                    console.log(1);
+
                     next({type:"LOGIN_SUCCESS", isSuccess: false});
                 }
                 next({type:"LOGIN_SUCCESS", isSuccess: res.body.isSuccess});

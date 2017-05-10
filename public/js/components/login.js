@@ -8,7 +8,6 @@ export default class Login extends React.Component {
     login() {
         const userName = this.refs.userName.value;
         const userPassword = this.refs.userPassword.value;
-        console.log(userName, userPassword);
         if (!userName || !userPassword) {
             alert("用户名和密码不能为空！");
 
@@ -25,7 +24,6 @@ export default class Login extends React.Component {
             alert("登录失败！");
         }
     }
-
 
     render() {
         return <div className="container-fluid back">
