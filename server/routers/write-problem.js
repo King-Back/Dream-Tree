@@ -7,7 +7,7 @@ router.post("/problemInfo", (req, res) => {
    const problem = new Problem({
         title: req.body.title,
         description: req.body.content,
-        auther: req.body.author
+        auther: req.cookies.username
     });
 
    problem.save(function (err) {

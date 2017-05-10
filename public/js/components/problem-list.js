@@ -3,11 +3,12 @@ import {Link} from 'react-router';
 
 export default class ProblemList extends React.Component {
     componentWillMount() {
+        this.props.getUsername();
         this.props.onDisplayProblemsList();
     }
 
     render() {
-        const username = this.props.userCookie;
+        const username = this.props.username;
         console.log(username);
         const p = this.props.problems.map((a, i)=> {
             return <div key={i}>

@@ -17,6 +17,10 @@ export default class WriteProblem extends React.Component {
         this.props.onPublic({title, content, author});
     }
 
+    componentDidMount() {
+
+    }
+
     componentWillReceiveProps(nextProps) {
         if (nextProps.saveSuccess) {
             alert("发布成功！");

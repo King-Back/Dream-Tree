@@ -6,10 +6,12 @@ const router = express.Router();
 router.post("/userInfo", (req, res) => {
 
     User.find({username: req.body.userName, password: req.body.userPassword}, (err, data) => {
-        if(err) {
+        if (err) {
             res.json({isSuccess: false});
         }
-        if(data.length != 0 && data.length) {
+        if (data.length != 0 && data.length) {
+            res.cookie('username', req.body.userName, {maxAge: 1000});
+            console.log(req.cookies);
             res.json({isSuccess: true});
         } else {
             res.json({isSuccess: false});
