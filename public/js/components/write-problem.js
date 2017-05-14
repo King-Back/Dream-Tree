@@ -7,7 +7,8 @@ export default class WriteProblem extends React.Component {
     publicProblem() {
         const title = this.refs.title.value;
         const content = this.refs.content.value;
-        const author = this.refs.author.value;
+        const author = this.props.username;
+        console.log(author);
 
         if(!title || !content || !author) {
             alert("发布问题时所有项不能为空!");
@@ -17,16 +18,17 @@ export default class WriteProblem extends React.Component {
         this.props.onPublic({title, content, author});
     }
 
-    componentDidMount() {
-
+    componentWillMount() {
+        this.props.getUsername();
     }
 
     componentWillReceiveProps(nextProps) {
         if (nextProps.saveSuccess) {
             alert("发布成功！");
             browserHistory.push('/')
-        } else {
+        } else if(nextProps.saveSuccess === false){
             alert("发布失败！");
+            this.props.onChangePublicSuccess();
         }
     }
 

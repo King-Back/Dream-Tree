@@ -10,8 +10,8 @@ router.post("/userInfo", (req, res) => {
             res.json({isSuccess: false});
         }
         if (data.length != 0 && data.length) {
-            res.cookie('username', req.body.userName, {maxAge: 10000});
-            res.json({isSuccess: true});
+            res.cookie('username', req.body.userName);
+            res.json({isSuccess: true});6
         } else {
             res.json({isSuccess: false});
         }

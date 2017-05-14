@@ -4,17 +4,18 @@ const router = express.Router();
 
 router.post("/problemInfo", (req, res) => {
 
+    console.log(req.body);
    const problem = new Problem({
         title: req.body.title,
         description: req.body.content,
-        auther: req.cookies.username
+        auther: req.body.author
     });
 
    problem.save(function (err) {
+       console.log(err);
         if (err) {
             res.json({isSuccess:false});
         } else {
-
             res.json({isSuccess:true});
         }
    })

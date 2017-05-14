@@ -10,7 +10,7 @@ exports.register = function (req, res) {
         if (err) {
             return res.json({tip: err.message});
         } else {
-            res.cookie("username",req.body.username,{maxAge: 10000});
+            res.cookie("username",req.body.username);
 
             return res.json({tip: "register success"});
         }
