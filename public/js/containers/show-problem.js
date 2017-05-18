@@ -5,7 +5,7 @@ const mapStateToProps = (state) => {
     return {
         title: state.showProblem.problem.title,
         description: state.showProblem.problem.description,
-        auther: state.showProblem.problem.auther
+        author: state.showProblem.problem.author
     }
 };
 

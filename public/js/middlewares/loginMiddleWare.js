@@ -5,7 +5,6 @@ export default store => next => action => {
         request.post('/userInfo')
             .send(action.data)
             .end((err, res) => {
-                console.log(res.body);
                 if(err) {
 
                     next({type:"LOGIN_SUCCESS", isSuccess: false});

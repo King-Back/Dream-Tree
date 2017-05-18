@@ -11,7 +11,7 @@ router.post("/userInfo", (req, res) => {
         }
         if (data.length != 0 && data.length) {
             res.cookie('username', req.body.userName);
-            res.json({isSuccess: true});6
+            res.json({isSuccess: true});
         } else {
             res.json({isSuccess: false});
         }

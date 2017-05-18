@@ -9,7 +9,6 @@ export default class ProblemList extends React.Component {
 
     render() {
         const username = this.props.username;
-        console.log(username);
         const p = this.props.problems.map((a, i)=> {
             return <div key={i}>
                 <form className="form-horizontal">
@@ -25,7 +24,7 @@ export default class ProblemList extends React.Component {
                     </div>
                     <div className="form-group">
                         <label className="col-md-2 control-label">发布人</label>
-                        <label className="col-md-2 control-label">{a.auther}</label>
+                        <label className="col-md-2 control-label">{a.author}</label>
                     </div>
                 </form>
             </div>

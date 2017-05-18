@@ -4,7 +4,7 @@ var ProblemSchema = new mongoose.Schema(
     {
         title: {type: String, required: true},
         description: {type: String, required: true},
-        auther: {type: String, required: true}
+        author: {type: String, required: true}
     },
     {timestamps: true}
 );

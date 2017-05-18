@@ -10,6 +10,7 @@ export default class ShowProblem extends React.Component {
         return <div className="col-md-8 col-md-offset-2">
             <div className="titlePage">
                 <center><h1>问题详情</h1></center>
+                <input type="button" value="编辑"/>
             </div>
             <form className="form-horizontal">
                 <div className="form-group">
@@ -22,7 +23,7 @@ export default class ShowProblem extends React.Component {
                 </div>
                 <div className="form-group">
                     <label className="col-md-2 control-label">发布人:</label>
-                    <label className="col-md-2 control-label">{this.props.auther}</label>
+                    <label className="col-md-2 control-label">{this.props.author}</label>
                 </div>
             </form>
         </div>;

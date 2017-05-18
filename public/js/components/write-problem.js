@@ -8,7 +8,6 @@ export default class WriteProblem extends React.Component {
         const title = this.refs.title.value;
         const content = this.refs.content.value;
         const author = this.props.username;
-        console.log(author);
 
         if(!title || !content || !author) {
             alert("发布问题时所有项不能为空!");
