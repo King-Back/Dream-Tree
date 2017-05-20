@@ -1,6 +1,7 @@
 require('../../css/style.css');
 
 import React from 'react';
+import {browserHistory} from 'react-router';
 
 export default class EditProblem extends React.Component {
     constructor(props) {
@@ -8,14 +9,12 @@ export default class EditProblem extends React.Component {
         this.state = {
             title: null,
             description: null,
-            author: null,
-            flag: true
+            author: null
         }
     }
 
     componentWillMount() {
         this.props.overDisplayProblem();
-
     }
 
     onchangeTitle() {
@@ -30,12 +29,6 @@ export default class EditProblem extends React.Component {
         });
     }
 
-    onchangeAuthor(){
-        this.setState({
-            author: this.refs.author.value
-        });
-    }
-
     updateProblem() {
         const title = this.refs.title.value;
         const description = this.refs.description.value;
@@ -43,7 +36,6 @@ export default class EditProblem extends React.Component {
         const id = this.props.id;
 
         if (!title || !description ) {
-
             alert("发布问题时所有项不能为空!");
             return;
         }
@@ -51,11 +43,17 @@ export default class EditProblem extends React.Component {
         this.props.onUpdateProblem({id, title, description, author});
     }
 
+    componentWillReceiveProps(nextProps){
+        if(nextProps.flag==="success"){
+            alert("success");
+            browserHistory.push(`showProblem/${this.props.id}`);
+        }
+    }
+
     render() {
         const title= this.state.title ===null ? this.props.title:this.state.title;
         const description= this.state.description ===null ? this.props.description:this.state.description;
         const author= this.props.author;
-
 
         return <div className="col-md-8 col-md-offset-2">
             <div className="titlePage">

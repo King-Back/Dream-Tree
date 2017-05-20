@@ -20,7 +20,7 @@ const editProblemMiddleware = store=>next=>action=>{
                     if(res.ok&&!err){
                         next({
                             type:'UPDATE_PROBLEM_INFO',
-                            data:res.body
+                            data:res.body.tip
                         });
                     }
                 });

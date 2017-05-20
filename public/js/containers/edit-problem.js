@@ -6,7 +6,8 @@ const mapStateToProps = (state) => {
         id: state.editProblem.problem._id,
         title: state.editProblem.problem.title,
         description: state.editProblem.problem.description,
-        author: state.editProblem.problem.author
+        author: state.editProblem.problem.author,
+        flag:state.editProblem.flag
     }
 };
 
