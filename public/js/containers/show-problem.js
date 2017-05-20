@@ -3,6 +3,7 @@ import ShowProblem from '../components/show-problem';
 
 const mapStateToProps = (state) => {
     return {
+        id: state.showProblem.problem._id,
         title: state.showProblem.problem.title,
         description: state.showProblem.problem.description,
         author: state.showProblem.problem.author

@@ -10,14 +10,16 @@ import Login from './containers/login';
 import Register from './containers/register';
 import ShowProblem from './containers/show-problem';
 import ProblemsList from './containers/problem-list';
+import EditProblem from './containers/edit-problem';
 import showProblemMiddleware from './middlewares/showProblemMiddleware';
 import middleHello from './middlewares/hello';
 import middleWriteProblem from './middlewares/write-problem';
 import problemsListMiddleware from './middlewares/problemsListMiddleware';
-import loginMiddleWare from './middlewares/loginMiddleWare'
-import registerMiddleware from './middlewares/registerMiddleware'
+import loginMiddleWare from './middlewares/loginMiddleWare';
+import registerMiddleware from './middlewares/registerMiddleware';
+import editProblemMiddleware from './middlewares/editProblemMiddleware';
 
-const createMiddlewareStore = applyMiddleware(middleHello, showProblemMiddleware, middleWriteProblem, problemsListMiddleware,loginMiddleWare,registerMiddleware)(createStore);
+const createMiddlewareStore = applyMiddleware(middleHello, showProblemMiddleware, middleWriteProblem, problemsListMiddleware, loginMiddleWare, registerMiddleware, editProblemMiddleware)(createStore);
 const store = createMiddlewareStore(reducer);
 
 render(<Provider store={store}>
@@ -28,5 +30,6 @@ render(<Provider store={store}>
         <Route path="/login" component={Login}/>
         <Route path="/problemsList" component={ProblemsList}/>
         <Route path="/registerPage" component={Register}/>
+        <Route path="/editProblem/:id" component={EditProblem}/>
     </Router>
 </Provider>, document.getElementById("content"));

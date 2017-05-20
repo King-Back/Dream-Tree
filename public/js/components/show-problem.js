@@ -1,16 +1,18 @@
 require('../../css/style.css');
 
 import React from 'react';
+import {Link} from 'react-router';
 
 export default class ShowProblem extends React.Component {
-    componentWillMount(){
+    componentWillMount() {
         this.props.onDisplayProblem();
     }
+
     render() {
         return <div className="col-md-8 col-md-offset-2">
             <div className="titlePage">
                 <center><h1>问题详情</h1></center>
-                <input type="button" value="编辑"/>
+                <Link to={`/editProblem/${this.props.id}`}><input type="button" value="编辑"/></Link>
             </div>
             <form className="form-horizontal">
                 <div className="form-group">

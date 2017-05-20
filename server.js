@@ -21,11 +21,13 @@ app.use(express.static(__dirname + '/public'));
 const db = require('./server/dbs/connection');
 const showProblem = require('./server/routers/show-problem');
 const problemsList = require('./server/routers/problems-list');
+const updateProblem = require('./server/routers/update-problem');
 
 app.use(express.static(__dirname + '/public'));
 
 app.get('/getProblem/:id', showProblem.getProblem);
 app.get('/getAllProblems', problemsList.getAllProblems);
+app.post('/updateProblem', updateProblem.updateProblem);
 app.use("/", hello);
 
 app.use('/', writeProblem);

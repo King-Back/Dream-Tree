@@ -6,6 +6,7 @@ import problemsList from './problemsList';
 import login from './login';
 import register from './register';
 import getCookies from './get-cookies';
+import editProblem from './editProblem';
 
 export default combineReducers({
     hello,
@@ -14,5 +15,6 @@ export default combineReducers({
     problemsList,
     login,
     register,
-    getCookies
+    getCookies,
+    editProblem
 });
