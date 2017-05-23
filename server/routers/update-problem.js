@@ -9,7 +9,6 @@ exports.updateProblem = function (req, res) {
         }
     }).sort({'updatedAt': -1}).exec(function (err, info) {
         if (err) return res.status(500).json({error: err.message});
-        console.log(info);
         res.json({tip:"success"});
     })
 };

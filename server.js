@@ -11,6 +11,7 @@ const writeProblem = require('./server/routers/write-problem');
 const login = require('./server/routers/login');
 const register=require('./server/routers/register');
 const getCookies = require('./server/routers/cookies');
+const reply = require('./server/routers/reply');
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
@@ -37,6 +38,8 @@ app.use('/', login);
 app.use('/register',register.register);
 
 app.use('/', getCookies);
+
+app.use('/', reply);
 
 app.get("*", function (req, res) {
     res.sendFile(path.resolve(__dirname, 'public', 'index.html'));
