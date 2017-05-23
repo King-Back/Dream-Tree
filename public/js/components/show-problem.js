@@ -28,6 +28,21 @@ export default class ShowProblem extends React.Component {
                     <label className="col-md-2 control-label">{this.props.author}</label>
                 </div>
             </form>
+            <Reply/>
         </div>;
+    }
+}
+
+class Reply extends React.Component {
+    reply() {
+        const comment = this.refs.comment.value;
+        console.log(comment);
+    }
+
+    render() {
+        return <div>
+            <textarea id="comment" cols="30" rows="10" ref="comment"></textarea>
+            <button onClick={this.reply.bind(this)}>回复</button>
+        </div>
     }
 }
