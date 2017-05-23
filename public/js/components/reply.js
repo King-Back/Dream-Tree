@@ -3,7 +3,7 @@ import React from "react";
 export default class Reply extends React.Component {
     reply() {
         const comment = this.refs.comment.value;
-        this.props.addComment(comment);
+        this.props.addComment({comment, id: this.props.id, author: "游客"});
     }
 
     render() {

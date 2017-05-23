@@ -2,13 +2,14 @@ import {connect} from "react-redux";
 import Reply from '../components/reply';
 
 const mapStateToProps = (state) => {
-    return {};
+    return {
+        id: state.showProblem.problem._id,
+    };
 };
 
 const mapDispatchToProps = (dispatch) => {
     return {
         addComment: (text) => {
-            console.log(text);
             dispatch({type: "ADD_COMMENT", text});
         }
     };
