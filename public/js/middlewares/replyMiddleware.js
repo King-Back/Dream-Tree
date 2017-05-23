@@ -1,7 +1,6 @@
 import request from 'superagent';
 
-const showProblemMiddleware = store => next => action => {
-    console.log(action.text);
+export default store => next => action => {
 
     switch (action.type) {
         case 'ADD_COMMENT' :
@@ -14,6 +13,4 @@ const showProblemMiddleware = store => next => action => {
     }
     next(action);
 };
-
-export default showProblemMiddleware;
 
