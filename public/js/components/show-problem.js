@@ -2,6 +2,8 @@ require('../../css/style.css');
 
 import React from 'react';
 import {Link} from 'react-router';
+import Reply from '../containers/reply';
+
 
 export default class ShowProblem extends React.Component {
     componentWillMount() {
@@ -30,19 +32,5 @@ export default class ShowProblem extends React.Component {
             </form>
             <Reply/>
         </div>;
-    }
-}
-
-class Reply extends React.Component {
-    reply() {
-        const comment = this.refs.comment.value;
-        console.log(comment);
-    }
-
-    render() {
-        return <div>
-            <textarea id="comment" cols="30" rows="10" ref="comment"></textarea>
-            <button onClick={this.reply.bind(this)}>回复</button>
-        </div>
     }
 }
