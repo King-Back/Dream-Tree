@@ -9,45 +9,41 @@ router.post("/replyComment", (req, res) => {
             return err;
         }
         if (data.length != 0 && data.length) {
-            updateComments(req.body);
+            updateComments(req.body, res);
         } else {
-            insertComments(req.body)
+            insertComments(req.body, res)
         }
     });
 });
 
-function updateComments(info) {
+function updateComments(info, res) {
 
     Comment.update({problemId: info.id}, {
         $push: {
-            "replyInfos": {author: info.author, content: info.content}
+            "replyInfos": {author: info.author, content: info.comment}
         }
-    }).sort({'updatedAt': -1}).exec(function (err, info) {
+    }).exec(function (err, info) {
         if(err) {
-            console.log(err);
-            return err;
+            res.json({isSaved: false, err});
         } else {
-            console.log(1);
-            return 1;
+            res.json({isSaved: true});
         }
     })
 }
 
-function insertComments(info) {
+function insertComments(info, res) {
     const comment = new Comment({
         problemId: info.id,
-        replyInfos: [{author: info.author, content: info.content}]
+        replyInfos: [{author: info.author, content: info.comment}]
     });
 
     comment.save(function (err) {
         if (err) {
-            console.log(err);
-            return err;
+            res.json({isSaved: false, err});
         } else {
-            console.log(1);
-            return 1;
+            res.json({isSaved: true});
         }
-    })
+    });
 
 }
 
