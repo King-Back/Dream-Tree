@@ -6,6 +6,7 @@ import Reply from '../containers/reply';
 
 
 export default class ShowProblem extends React.Component {
+
     componentWillMount() {
         this.props.onDisplayProblem();
     }

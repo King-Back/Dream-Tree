@@ -19,6 +19,6 @@ export default combineReducers({
     register,
     getCookies,
     reply,
-    editProblem,
-    personalPage
+    personalPage,
+    editProblem
 });
