@@ -3,7 +3,6 @@ import React from "react";
 export default class Reply extends React.Component {
 
     componentWillReceiveProps(nextProps) {
-        console.log(nextProps.isSaved);
         if(nextProps.isSaved === true) {
             alert("评论成功！");
         } else if (nextProps.isSaved === false) {

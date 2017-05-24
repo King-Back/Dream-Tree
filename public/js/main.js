@@ -19,15 +19,11 @@ import problemsListMiddleware from './middlewares/problemsListMiddleware';
 import loginMiddleWare from './middlewares/loginMiddleWare';
 import registerMiddleware from './middlewares/registerMiddleware';
 import editProblemMiddleware from './middlewares/editProblemMiddleware';
-<<<<<<< Updated upstream
 import replyMiddleware from './middlewares/replyMiddleware';
-
-const createMiddlewareStore = applyMiddleware(middleHello, showProblemMiddleware, middleWriteProblem, problemsListMiddleware, loginMiddleWare, registerMiddleware, editProblemMiddleware, replyMiddleware)(createStore);
-=======
 import personalPageMiddleware from './middlewares/personalPage';
 
-const createMiddlewareStore = applyMiddleware(middleHello, showProblemMiddleware, middleWriteProblem, problemsListMiddleware, loginMiddleWare, registerMiddleware, editProblemMiddleware,personalPageMiddleware)(createStore);
->>>>>>> Stashed changes
+const createMiddlewareStore = applyMiddleware(middleHello, showProblemMiddleware, middleWriteProblem, problemsListMiddleware, loginMiddleWare, registerMiddleware, editProblemMiddleware, replyMiddleware,personalPageMiddleware)(createStore);
+
 const store = createMiddlewareStore(reducer);
 
 render(<Provider store={store}>
