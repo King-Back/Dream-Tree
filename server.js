@@ -23,11 +23,14 @@ const db = require('./server/dbs/connection');
 const showProblem = require('./server/routers/show-problem');
 const problemsList = require('./server/routers/problems-list');
 const updateProblem = require('./server/routers/update-problem');
+const publishProblem = require('./server/routers/publish-problems-list');
 
 app.use(express.static(__dirname + '/public'));
 
 app.get('/getProblem/:id', showProblem.getProblem);
 app.get('/getAllProblems', problemsList.getAllProblems);
+
+app.get('/getPublishProblems/:username', publishProblem.getPublishProblems);
 app.post('/updateProblem', updateProblem.updateProblem);
 app.use("/", hello);
 

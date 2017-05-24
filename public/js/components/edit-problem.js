@@ -37,7 +37,7 @@ export default class EditProblem extends React.Component {
 
         if (!title || !description ) {
             alert("发布问题时所有项不能为空!");
-            return;
+            return ;
         }
 
         this.props.onUpdateProblem({id, title, description, author});
@@ -54,6 +54,7 @@ export default class EditProblem extends React.Component {
         const title= this.state.title ===null ? this.props.title:this.state.title;
         const description= this.state.description ===null ? this.props.description:this.state.description;
         const author= this.props.author;
+        // console.log(this);
 
         return <div className="col-md-8 col-md-offset-2">
             <div className="titlePage">

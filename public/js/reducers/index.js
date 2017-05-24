@@ -7,6 +7,7 @@ import login from './login';
 import register from './register';
 import getCookies from './get-cookies';
 import editProblem from './editProblem';
+import personalPage from './personalPage';
 
 export default combineReducers({
     hello,
@@ -16,5 +17,6 @@ export default combineReducers({
     login,
     register,
     getCookies,
-    editProblem
+    editProblem,
+    personalPage
 });
