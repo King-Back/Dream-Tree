@@ -18,7 +18,7 @@ export default class Login extends React.Component {
     componentWillReceiveProps(nextProps) {
         if (nextProps.logSuccess === true) {
             alert("登录成功！");
-            browserHistory.push('/writeProblem');
+            browserHistory.push('/problemsList');
         } else if(nextProps.logSuccess === false) {
             alert("登录失败！");
         }
