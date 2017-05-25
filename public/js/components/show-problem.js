@@ -3,11 +3,14 @@ require('../../css/style.css');
 import React from 'react';
 import {Link} from 'react-router';
 import Reply from '../containers/reply';
+import ShowComments from '../containers/show-comments';
 
 
 export default class ShowProblem extends React.Component {
     componentWillMount() {
-        this.props.onDisplayProblem();
+        console.log(this.props.params.id);
+
+        this.props.onDisplayProblem(this.props.params.id);
     }
 
     render() {
@@ -30,6 +33,7 @@ export default class ShowProblem extends React.Component {
                     <label className="col-md-2 control-label">{this.props.author}</label>
                 </div>
             </form>
+            <ShowComments/>
             <Reply/>
         </div>;
     }

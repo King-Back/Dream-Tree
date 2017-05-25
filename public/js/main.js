@@ -21,8 +21,9 @@ import registerMiddleware from './middlewares/registerMiddleware';
 import editProblemMiddleware from './middlewares/editProblemMiddleware';
 import replyMiddleware from './middlewares/replyMiddleware';
 import personalPageMiddleware from './middlewares/personalPage';
+import showCommentsMiddleware from './middlewares/showCommentsMiddleware';
 
-const createMiddlewareStore = applyMiddleware(middleHello, showProblemMiddleware, middleWriteProblem, problemsListMiddleware, loginMiddleWare, registerMiddleware, editProblemMiddleware, replyMiddleware,personalPageMiddleware)(createStore);
+const createMiddlewareStore = applyMiddleware(middleHello, showProblemMiddleware, middleWriteProblem, problemsListMiddleware, loginMiddleWare, registerMiddleware, editProblemMiddleware, replyMiddleware, personalPageMiddleware, showCommentsMiddleware)(createStore);
 
 const store = createMiddlewareStore(reducer);
 
