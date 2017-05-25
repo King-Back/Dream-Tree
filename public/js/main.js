@@ -29,13 +29,13 @@ const store = createMiddlewareStore(reducer);
 
 render(<Provider store={store}>
     <Router history={browserHistory}>
-        <Route path="/" component={Hello}/>
+        <Route path="/" component={PersonalPage}/>
         <Route path="/showProblem/:id" component={ShowProblem}/>
         <Route path="/writeProblem" component={WriteProblem}/>
         <Route path="/login" component={Login}/>
         <Route path="/problemsList" component={ProblemsList}/>
         <Route path="/registerPage" component={Register}/>
         <Route path="/editProblem/:id" component={EditProblem}/>
-        <Route path="/personalPage/:username" compontent={PersonalPage}/>
+        <Route path="/personalPage" component={PersonalPage}/>
     </Router>
 </Provider>, document.getElementById("content"));

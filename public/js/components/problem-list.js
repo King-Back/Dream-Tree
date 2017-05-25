@@ -9,7 +9,7 @@ export default class ProblemList extends React.Component {
 
     render() {
         const username = this.props.username;
-        
+
         const p = this.props.problems.map((a, i)=> {
             return <div key={i}>
                 <form className="form-horizontal">
@@ -32,9 +32,10 @@ export default class ProblemList extends React.Component {
         });
 
         return (<div className="col-md-8 col-md-offset-2">
-            <Link to={`/personalPage/${username}`}>
+            <Link to={`/personalPage`}>
                 <div>个人中心</div>
             </Link>
+
             <div className="titlePage">
                 <center><h1>问题列表</h1></center>
             </div>

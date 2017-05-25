@@ -1,5 +1,5 @@
 import {connect} from 'react-redux';
-import personalPage from '../components/personal-page';
+import PersonalPage from '../components/personal-page';
 
 const mapStateToProps = (state) => {
     return {
@@ -9,13 +9,13 @@ const mapStateToProps = (state) => {
 };
 
 const mapDispatchToProps = (dispatch) => {
-    const username = (location.href).split("/").pop();
-    console.log(username);
+    const username = document.cookie.split('=').pop();
+
     return {
-        getPublishProblems:()=>{
+        getPublishProblemsList:()=>{
             dispatch({type:"GET_PUBLISH_PROBLEMS",username})
         }
     };
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(personalPage);
+export default connect(mapStateToProps, mapDispatchToProps)(PersonalPage);

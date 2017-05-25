@@ -7,6 +7,7 @@ import ShowComments from '../containers/show-comments';
 
 
 export default class ShowProblem extends React.Component {
+
     componentWillMount() {
         console.log(this.props.params.id);
 
