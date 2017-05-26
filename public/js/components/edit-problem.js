@@ -47,7 +47,7 @@ export default class EditProblem extends React.Component {
     componentWillReceiveProps(nextProps){
         if(nextProps.flag==="success"){
             alert("success");
-            browserHistory.push(`showProblem/${this.props.id}`);
+            browserHistory.push(`showProblem?id=${this.props.id}`);
         }
     }
 
