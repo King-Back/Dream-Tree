@@ -22,12 +22,8 @@ function updateComments(info, res) {
         $push: {
             "replyInfos": {author: info.author, content: info.comment}
         }
-    }).exec(function (err, info) {
-        if(err) {
-            res.json({isSaved: false, err});
-        } else {
-            res.json({isSaved: true});
-        }
+    }).exec(function (err, data) {
+        findComments(info, res);
     })
 }
 
@@ -38,13 +34,18 @@ function insertComments(info, res) {
     });
 
     comment.save(function (err) {
-        if (err) {
-            res.json({isSaved: false, err});
-        } else {
-            res.json({isSaved: true});
-        }
+        findComments(info, res);
     });
 
+}
+
+function findComments(info, res) {
+    Comment.find({problemId: info.id}).sort({'createdAt': -1}).exec(function (err, info) {
+        if(!info[0]) {
+            res.json({comments: []});
+        } else
+            res.json({comments: info[0].replyInfos});
+    });
 }
 
 module.exports = router;

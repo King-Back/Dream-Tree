@@ -7,7 +7,6 @@ import login from './login';
 import register from './register';
 import getCookies from './get-cookies';
 import editProblem from './editProblem';
-import reply from './reply';
 import personalPage from './personalPage';
 import getComments from './getComments';
 
@@ -19,7 +18,6 @@ export default combineReducers({
     login,
     register,
     getCookies,
-    reply,
     getComments,
     editProblem,
     personalPage
