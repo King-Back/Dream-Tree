@@ -1,12 +1,15 @@
 import React from 'react';
 
 export default class ShowComments extends React.Component {
+    componentWillReceiveProps(nextProps) {
+        console.log(nextProps.id);
+        if(nextProps.id) {
+            this.props.getComments(nextProps.id);
+            this.props.changeProblemId();
+        }
+    }
 
     render() {
-        if (this.props.id && !this.props.comments.length) {
-            this.props.getComments(this.props.id);
-        }
-
         const comments = this.props.comments.map((c, i) => {
             return <div key={i}>
                 <div>
