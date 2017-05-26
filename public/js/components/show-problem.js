@@ -9,16 +9,14 @@ import ShowComments from '../containers/show-comments';
 export default class ShowProblem extends React.Component {
 
     componentWillMount() {
-        console.log(this.props.params.id);
-
-        this.props.onDisplayProblem(this.props.params.id);
+        this.props.onDisplayProblem(this.props.location.query.id);
     }
 
     render() {
         return <div className="col-md-8 col-md-offset-2">
             <div className="titlePage">
                 <center><h1>问题详情</h1></center>
-                <Link to={`/editProblem/${this.props.id}`}><input type="button" value="编辑"/></Link>
+                <Link to={`/editProblem?id=${this.props.id}`}><input type="button" value="编辑"/></Link>
             </div>
             <form className="form-horizontal">
                 <div className="form-group">

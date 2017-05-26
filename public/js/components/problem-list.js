@@ -13,7 +13,7 @@ export default class ProblemList extends React.Component {
         const p = this.props.problems.map((a, i)=> {
             return <div key={i}>
                 <form className="form-horizontal">
-                    <Link to={`/showProblem/${a._id}`}>
+                    <Link to={`/showProblem?id=${a._id}`}>
                         <div className="form-group">
                             <label className="col-md-2 control-label">标题</label>
                             <label className="col-md-2 control-label">{a.title}</label>
