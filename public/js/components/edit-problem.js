@@ -14,7 +14,8 @@ export default class EditProblem extends React.Component {
     }
 
     componentWillMount() {
-        this.props.overDisplayProblem();
+
+        this.props.overDisplayProblem(this.props.location.query.id);
     }
 
     onchangeTitle() {

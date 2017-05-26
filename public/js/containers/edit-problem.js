@@ -12,11 +12,9 @@ const mapStateToProps = (state) => {
 };
 
 const mapDispatchToProps = (dispatch) => {
-    const id = decodeURI(location.href).split("/").pop();
-    
     return {
-        overDisplayProblem: () => {
-            dispatch({type: "OVER_LOAD_PROBLEM_INFO", url: `${id}`});
+        overDisplayProblem: (id) => {
+            dispatch({type: "OVER_LOAD_PROBLEM_INFO", url: id});
         },
         onUpdateProblem: (problem)=> {
             dispatch({type: "LOAD_UPDATE_PROBLEM_INFO", data: problem})
